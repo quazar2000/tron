@@ -52,9 +52,13 @@ const update = state => {
   // I filter my array of coords to keep only those that are in bounds
   const coordsInBound = state.ai.coords.filter(isInBounds)
 
-  // I filter again to keep coords that are free
-  const available = coordsInBound.filter(isFree)
+  // // I filter again to keep coords that are free
+  // const available = coordsInBound.filter(isFree)
 
-  // And I return a random available coord
-  return pickRandom(available)
+  // // And I return a random available coord
+  // return pickRandom(available)
+
+  // always return the first free coordinates
+return coordsInBound.filter(isFree)[0]
+
 }
